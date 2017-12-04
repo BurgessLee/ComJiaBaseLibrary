@@ -12,7 +12,7 @@ import com.comjia.baselibrary.http.imageloader.ImageLoader;
 import com.comjia.baselibrary.integration.AppManager;
 import com.comjia.baselibrary.integration.IRepositoryManager;
 import com.comjia.baselibrary.integration.cache.Cache;
-import com.comjia.baselibrary.utils.ArmsUtils;
+import com.comjia.baselibrary.utils.AppUtils;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ import okhttp3.OkHttpClient;
 
 /**
  * ================================================
- * 可通过 {@link ArmsUtils#obtainAppComponentFromContext(Context)} 拿到此接口的实现类
+ * 可通过 {@link AppUtils#obtainAppComponentFromContext(Context)} 拿到此接口的实现类
  * 拥有此接口的实现类即可调用对应的方法拿到 Dagger 提供的对应实例
  *
  * @see <a href="https://github.com/JessYanCoding/MVPArms/wiki#2.2">AppComponent wiki 官方文档</a>

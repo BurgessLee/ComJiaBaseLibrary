@@ -13,7 +13,7 @@ import com.comjia.baselibrary.integration.cache.Cache;
 import com.comjia.baselibrary.integration.cache.CacheType;
 import com.comjia.baselibrary.integration.lifecycle.FragmentLifecycleable;
 import com.comjia.baselibrary.mvp.IPresenter;
-import com.comjia.baselibrary.utils.ArmsUtils;
+import com.comjia.baselibrary.utils.AppUtils;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import javax.inject.Inject;
@@ -40,7 +40,7 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public synchronized Cache<String, Object> provideCache() {
         if (mCache == null) {
-            mCache = ArmsUtils.obtainAppComponentFromContext(getActivity()).cacheFactory().build(CacheType.FRAGMENT_CACHE);
+            mCache = AppUtils.obtainAppComponentFromContext(getActivity()).cacheFactory().build(CacheType.FRAGMENT_CACHE);
         }
         return mCache;
     }

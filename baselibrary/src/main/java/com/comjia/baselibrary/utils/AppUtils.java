@@ -37,11 +37,11 @@ import static com.comjia.baselibrary.integration.AppManager.START_ACTIVITY;
  * 一些框架常用的工具
  * ================================================
  */
-public class ArmsUtils {
+public class AppUtils {
 
     static public Toast mToast;
 
-    private ArmsUtils() {
+    private AppUtils() {
         throw new IllegalStateException("you can't instantiate me!");
     }
 

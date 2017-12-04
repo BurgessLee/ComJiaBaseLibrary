@@ -14,7 +14,7 @@ import com.comjia.baselibrary.demo.di.module.UserModule;
 import com.comjia.baselibrary.demo.mvp.contract.UserContract;
 import com.comjia.baselibrary.demo.mvp.presenter.UserPresenter;
 import com.comjia.baselibrary.di.component.AppComponent;
-import com.comjia.baselibrary.utils.ArmsUtils;
+import com.comjia.baselibrary.utils.AppUtils;
 import com.paginate.Paginate;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -83,7 +83,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
      */
     private void initRecyclerView() {
         mSwipeRefreshLayout.setOnRefreshListener(this);
-        ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
+        AppUtils.configRecyclerView(mRecyclerView, mLayoutManager);
     }
 
     @Override
@@ -100,12 +100,12 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     @Override
     public void showMessage(String message) {
-        ArmsUtils.snackbarText(message);
+        AppUtils.snackbarText(message);
     }
 
     @Override
     public void launchActivity(Intent intent) {
-        ArmsUtils.startActivity(intent);
+        AppUtils.startActivity(intent);
     }
 
     @Override
