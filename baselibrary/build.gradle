@@ -38,7 +38,7 @@ buildscript {
 
 
 dependencies {
-    //support
+    // support
     api(rootProject.ext.dependencies["support-v4"]) {
         exclude module: 'support-annotations'
     }
@@ -53,15 +53,16 @@ dependencies {
     }
     api rootProject.ext.dependencies["annotations"]
 
-    //view
+    // view
     api(rootProject.ext.dependencies["autolayout"]) {
         exclude group: 'com.android.support'
     }
     api(rootProject.ext.dependencies["butterknife"]) {
         exclude module: 'support-annotations'
     }
+    api(rootProject.ext.dependencies["baserecyclerviewadapter"])
 
-    //rx
+    // rx
     api rootProject.ext.dependencies["rxjava2"]
     api(rootProject.ext.dependencies["rxandroid2"]) {
         exclude module: 'rxjava'
@@ -89,7 +90,7 @@ dependencies {
     }
     api rootProject.ext.dependencies['rxerrorhandler2']
 
-    //network
+    // network
     api(rootProject.ext.dependencies["retrofit"]) {
         exclude module: 'okhttp'
         exclude module: 'okio'
@@ -114,14 +115,14 @@ dependencies {
         exclude module: 'jsr305'
     }
 
-    //tools
+    // tools
     compileOnly rootProject.ext.dependencies["javax.annotation"]
     api rootProject.ext.dependencies["dagger2"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
     api rootProject.ext.dependencies["androideventbus"]
     api rootProject.ext.dependencies["gson"]
 
-    //test
+    // test
     api rootProject.ext.dependencies["timber"]
     testApi rootProject.ext.dependencies["junit"]
 }
