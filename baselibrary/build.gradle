@@ -127,3 +127,5 @@ dependencies {
     api rootProject.ext.dependencies["timber"]
     testApi rootProject.ext.dependencies["junit"]
 }
+
+apply from: 'jitpack.gradle'
