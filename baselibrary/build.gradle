@@ -61,6 +61,7 @@ dependencies {
         exclude module: 'support-annotations'
     }
     api(rootProject.ext.dependencies["baserecyclerviewadapter"])
+    api(rootProject.ext.dependencies["agentweb"])
 
     // rx
     api rootProject.ext.dependencies["rxjava2"]

@@ -53,6 +53,7 @@ ext {
             "paginate"                 : "com.github.markomilos:paginate:0.5.1",
             "vlayout"                  : "com.alibaba.android:vlayout:1.1.0@aar",
             "baserecyclerviewadapter"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34",
+            "agentweb"                 : "com.just.agentweb:agentweb:2.0.1",
 
             // rx1
             "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
