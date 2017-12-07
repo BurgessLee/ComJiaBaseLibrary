@@ -54,6 +54,7 @@ ext {
             "vlayout"                  : "com.alibaba.android:vlayout:1.1.0@aar",
             "baserecyclerviewadapter"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34",
             "agentweb"                 : "com.just.agentweb:agentweb:2.0.1",
+            "flowlayout"               : "com.hyman:flowlayout-lib:1.1.2",
 
             // rx1
             "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
@@ -101,6 +102,7 @@ ext {
             "logger"                   : "com.orhanobut:logger:2.1.1",
             "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
             "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
+            "sensorsdata"              : "com.sensorsdata.analytics.android:SensorsAnalyticsSDK:1.8.13",
             "ugly"                     : "com.tencent.bugly:crashreport:latest.release"
     ]
 }

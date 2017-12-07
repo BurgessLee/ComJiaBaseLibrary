@@ -259,7 +259,40 @@
 # Java 注入类不要混淆 ， 例如 sample 里面的 AndroidInterface 类 ， 需要 Keep
 -keepclassmembers class com.just.library.agentweb.AndroidInterface{ *; }
 
+################ SensorsAnalytics #################
+-dontwarn com.sensorsdata.analytics.android.**
+-keep class com.sensorsdata.analytics.android.** {
+*;
+}
+-keep class **.R$* {
+    <fields>;
+}
+-keep public class * extends android.content.ContentProvider
+-keepnames class * extends android.view.View
 
+-keep class * extends android.app.Fragment {
+ public void setUserVisibleHint(boolean);
+ public void onHiddenChanged(boolean);
+ public void onResume();
+ public void onPause();
+}
+-keep class android.support.v4.app.Fragment {
+ public void setUserVisibleHint(boolean);
+ public void onHiddenChanged(boolean);
+ public void onResume();
+ public void onPause();
+}
+-keep class * extends android.support.v4.app.Fragment {
+ public void setUserVisibleHint(boolean);
+ public void onHiddenChanged(boolean);
+ public void onResume();
+ public void onPause();
+}
+
+
+################ Bugly #################
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
 
 
 
