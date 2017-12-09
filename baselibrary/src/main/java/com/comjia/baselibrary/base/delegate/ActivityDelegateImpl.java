@@ -3,7 +3,7 @@ package com.comjia.baselibrary.base.delegate;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.comjia.baselibrary.utils.AppUtils;
+import com.comjia.baselibrary.utils.BaseAppUtils;
 
 import org.simple.eventbus.EventBus;
 
@@ -30,7 +30,7 @@ public class ActivityDelegateImpl implements ActivityDelegate {
             EventBus.getDefault().register(mActivity);
         }
         // 依赖注入
-        iActivity.setupActivityComponent(AppUtils.obtainAppComponentFromContext(mActivity));
+        iActivity.setupActivityComponent(BaseAppUtils.obtainAppComponentFromContext(mActivity));
     }
 
     @Override

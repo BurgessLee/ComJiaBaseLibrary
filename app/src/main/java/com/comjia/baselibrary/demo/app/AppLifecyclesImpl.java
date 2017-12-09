@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.comjia.baselibrary.base.delegate.AppLifecycles;
 import com.comjia.baselibrary.demo.BuildConfig;
-import com.comjia.baselibrary.utils.AppUtils;
+import com.comjia.baselibrary.utils.BaseAppUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -48,9 +48,9 @@ public class AppLifecyclesImpl implements AppLifecycles {
             ButterKnife.setDebug(true);
         }
         //leakCanary内存泄露检查
-        AppUtils.obtainAppComponentFromContext(application).extras().put(RefWatcher.class.getName(), BuildConfig.USE_CANARY ? LeakCanary.install(application) : RefWatcher.DISABLED);
+        BaseAppUtils.obtainAppComponentFromContext(application).extras().put(RefWatcher.class.getName(), BuildConfig.USE_CANARY ? LeakCanary.install(application) : RefWatcher.DISABLED);
         //扩展 AppManager 的远程遥控功能
-        AppUtils.obtainAppComponentFromContext(application).appManager().setHandleListener((appManager, message) -> {
+        BaseAppUtils.obtainAppComponentFromContext(application).appManager().setHandleListener((appManager, message) -> {
             switch (message.what) {
                 //case 0:
                 //do something ...

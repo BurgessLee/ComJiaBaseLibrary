@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 
-import com.comjia.baselibrary.utils.AppUtils;
+import com.comjia.baselibrary.utils.BaseAppUtils;
 
 import org.simple.eventbus.EventBus;
 
@@ -45,7 +45,7 @@ public class FragmentDelegateImpl implements FragmentDelegate {
             EventBus.getDefault().register(mFragment);
         }
         // 依赖注入
-        iFragment.setupFragmentComponent(AppUtils.obtainAppComponentFromContext(mFragment.getActivity()));
+        iFragment.setupFragmentComponent(BaseAppUtils.obtainAppComponentFromContext(mFragment.getActivity()));
     }
 
     @Override

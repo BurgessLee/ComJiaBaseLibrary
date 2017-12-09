@@ -12,7 +12,7 @@ import com.comjia.baselibrary.demo.mvp.model.api.Api;
 import com.comjia.baselibrary.di.module.GlobalConfigModule;
 import com.comjia.baselibrary.http.RequestInterceptor;
 import com.comjia.baselibrary.integration.ConfigModule;
-import com.comjia.baselibrary.utils.AppUtils;
+import com.comjia.baselibrary.utils.BaseAppUtils;
 import com.squareup.leakcanary.RefWatcher;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -124,7 +124,7 @@ public final class GlobalConfiguration implements ConfigModule {
 
             @Override
             public void onFragmentDestroyed(FragmentManager fm, Fragment f) {
-                ((RefWatcher) AppUtils
+                ((RefWatcher) BaseAppUtils
                         .obtainAppComponentFromContext(f.getActivity())
                         .extras()
                         .get(RefWatcher.class.getName()))

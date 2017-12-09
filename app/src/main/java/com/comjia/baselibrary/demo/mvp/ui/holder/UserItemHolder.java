@@ -10,7 +10,7 @@ import com.comjia.baselibrary.demo.mvp.model.entity.User;
 import com.comjia.baselibrary.di.component.AppComponent;
 import com.comjia.baselibrary.http.imageloader.ImageLoader;
 import com.comjia.baselibrary.http.imageloader.glide.ImageConfigImpl;
-import com.comjia.baselibrary.utils.AppUtils;
+import com.comjia.baselibrary.utils.BaseAppUtils;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
@@ -32,7 +32,7 @@ public class UserItemHolder extends BaseHolder<User> {
     public UserItemHolder(View itemView) {
         super(itemView);
         // 可以在任何可以拿到 Context 的地方,拿到 AppComponent,从而得到用 Dagger 管理的单例对象
-        mAppComponent = AppUtils.obtainAppComponentFromContext(itemView.getContext());
+        mAppComponent = BaseAppUtils.obtainAppComponentFromContext(itemView.getContext());
         mImageLoader = mAppComponent.imageLoader();
     }
 
