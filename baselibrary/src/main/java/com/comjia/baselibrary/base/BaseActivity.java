@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.comjia.baselibrary.base.delegate.IActivity;
 import com.comjia.baselibrary.integration.cache.Cache;
@@ -112,5 +113,35 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     @Override
     public boolean useFragment() {
         return true;
+    }
+
+    /**
+     * 显示软键盘
+     */
+    public void showSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInputFromInputMethod(target.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * 隐藏软键盘
+     */
+    public void hideSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(target.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * 切换软键盘的显示与隐藏
+     */
+    public void switchSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.toggleSoftInputFromWindow(target.getWindowToken(), 0, InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 }

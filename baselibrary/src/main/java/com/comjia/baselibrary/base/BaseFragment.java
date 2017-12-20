@@ -1,5 +1,6 @@
 package com.comjia.baselibrary.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import com.comjia.baselibrary.base.delegate.IFragment;
 import com.comjia.baselibrary.integration.cache.Cache;
@@ -74,5 +76,35 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public boolean useEventBus() {
         return true;
+    }
+
+    /**
+     * 显示软键盘
+     */
+    public void showSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInputFromInputMethod(target.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * 隐藏软键盘
+     */
+    public void hideSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(target.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * 切换软键盘的显示与隐藏
+     */
+    public void switchSoftInput(View target) {
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.toggleSoftInputFromWindow(target.getWindowToken(), 0, InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 }
