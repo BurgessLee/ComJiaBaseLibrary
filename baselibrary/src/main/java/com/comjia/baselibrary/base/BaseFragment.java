@@ -16,6 +16,7 @@ import com.comjia.baselibrary.integration.cache.CacheType;
 import com.comjia.baselibrary.integration.lifecycle.FragmentLifecycleable;
 import com.comjia.baselibrary.mvp.IPresenter;
 import com.comjia.baselibrary.utils.BaseAppUtils;
+import com.sensorsdata.analytics.android.sdk.SensorsDataTrackFragmentAppViewScreen;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import javax.inject.Inject;
@@ -29,6 +30,7 @@ import io.reactivex.subjects.Subject;
  * 继承于这个特定的 @{@link Fragment}, 然后再按照 {@link BaseFragment} 的格式, 将代码复制过去, 记住一定要实现{@link IFragment}
  * ================================================
  */
+@SensorsDataTrackFragmentAppViewScreen
 public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IFragment, FragmentLifecycleable {
 
     protected final String TAG = getClass().getSimpleName();
