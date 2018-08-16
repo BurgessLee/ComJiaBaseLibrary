@@ -109,6 +109,13 @@ public class PermissionUtil {
         requestPermission(requestPermission, rxPermissions, errorHandler, Manifest.permission.READ_PHONE_STATE);
     }
 
+    /**
+     * 请求获取定位权限
+     */
+    public static void accessLocation(RequestPermission requestPermission, RxPermissions rxPermissions, RxErrorHandler errorHandler) {
+        requestPermission(requestPermission, rxPermissions, errorHandler, Manifest.permission.ACCESS_COARSE_LOCATION);
+    }
+
     public interface RequestPermission {
         /**
          * 权限请求成功
